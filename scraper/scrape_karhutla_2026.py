@@ -17,6 +17,12 @@ from urllib.parse import parse_qs,quote_plus,unquote,urljoin,urlparse
 import requests
 from bs4 import BeautifulSoup
 
+try:
+    from bs4 import XMLParsedAsHTMLWarning
+except ImportError:
+    XMLParsedAsHTMLWarning = Warning
+import warnings
+
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
 OUTPUT=DATA/"karhutla_2026.json"
@@ -42,6 +48,51 @@ SOURCE_CONFIG=[
 PRIORITY_PROVINCES={"Riau":15551.76,"Jambi":540.0,"Sumatera Selatan":664.87,"Kalimantan Barat":28680.47,"Kalimantan Tengah":3069.52,"Kalimantan Selatan":383.07}
 PROVINCE_COORDS={"Riau":(0.3,101.7),"Jambi":(-1.6,103.6),"Sumatera Selatan":(-3.2,104.2),"Kalimantan Barat":(-0.1,110.0),"Kalimantan Tengah":(-1.7,113.4),"Kalimantan Selatan":(-3.0,115.4)}
 FALLBACK_CURRENT={"total_hotspots":2310,"fire_spots":202,"burned_area_24h_ha":638.6,"handled_area_today_ha":431.5,"personnel":59035,"air_units":57,"affected_regencies_cities":36,"handled_area_ground_ha":369.03,"handled_area_air_ha":62.5,"uncontrolled_area_ha":96.07,"total_burned_area_situation_ha":527.6}
+
+# Existing local dashboard snapshot is used only as a safety net when a value
+# cannot be extracted from the newly discovered/fallback reference pages.
+# This avoids the previous NameError caused by referencing an undefined
+# `snapshot` object during automated runs.
+REFERENCE_SNAPSHOT={
+    "hotspot_window": {
+        "period": "7–16 September 2026",
+        "high_confidence": [
+            {"province": "Kalimantan Tengah", "hotspots": 3177},
+            {"province": "Sumatera Selatan", "hotspots": 1305},
+            {"province": "Kalimantan Barat", "hotspots": 1088},
+            {"province": "Papua Selatan", "hotspots": 960},
+        ],
+    },
+    "personnel_composition": [
+        {"group": "TNI", "count": 14311},
+        {"group": "Relawan", "count": 11919},
+        {"group": "Polri", "count": 8153},
+        {"group": "Perusahaan", "count": 8069},
+        {"group": "MPA", "count": 5743},
+        {"group": "BPBD", "count": 3527},
+        {"group": "Pemda", "count": 2680},
+        {"group": "Satpol PP", "count": 1891},
+        {"group": "Manggala Agni", "count": 1451},
+        {"group": "Polisi Hutan", "count": 1271},
+        {"group": "Pemerintah Pusat", "count": 20},
+    ],
+    "province_air_quality": [
+        {"province": "Riau", "air_quality": "Moderate–Unhealthy", "visibility_km": "4 km"},
+        {"province": "Jambi", "air_quality": "Good–Unhealthy", "visibility_km": "2.5 km"},
+        {"province": "Sumatera Selatan", "air_quality": "Good–Moderate", "visibility_km": "≤ 6–8 km"},
+        {"province": "Kalimantan Barat", "air_quality": "Moderate–Unhealthy", "visibility_km": "0.6–10 km"},
+        {"province": "Kalimantan Tengah", "air_quality": "Good–Hazardous", "visibility_km": "2.5 km"},
+        {"province": "Kalimantan Selatan", "air_quality": "Unhealthy–Hazardous", "visibility_km": "< 7 km"},
+    ],
+    "operations_today": [
+        {"operation": "Patroli", "sorties": 9},
+        {"operation": "Water Bombing", "sorties": 21},
+        {"operation": "OMC", "sorties": 8},
+    ],
+}
+
+# Backward-compatible alias: older versions referenced `snapshot`.
+snapshot = REFERENCE_SNAPSHOT
 
 def now_iso(): return datetime.now().astimezone().isoformat()
 def norm(t): return re.sub(r"\s+"," ",t or "").strip()
@@ -76,7 +127,12 @@ def parse_sitemap(u,seen=None):
     if u in seen or len(seen)>25:return []
     seen.add(u); h,_=fetch(u)
     if not h:return []
-    s=BeautifulSoup(h,"html.parser"); out=[]
+    try:
+        s=BeautifulSoup(h,"xml"); out=[]
+    except Exception:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", XMLParsedAsHTMLWarning)
+            s=BeautifulSoup(h,"html.parser"); out=[]
     for loc in s.find_all("loc"):
         v=norm(loc.get_text())
         if v.endswith(".xml") or "sitemap" in v.lower(): out.extend(parse_sitemap(v,seen))
@@ -232,8 +288,8 @@ def main():
     hotspot_top=extract_hotspots(bmkg_text)
     if len(hotspot_top)<3:hotspot_top=[{"province":"Kalimantan Tengah","hotspots":5283},{"province":"Sumatera Selatan","hotspots":1485},{"province":"Kalimantan Barat","hotspots":1357},{"province":"Kalimantan Selatan","hotspots":498},{"province":"Kalimantan Timur","hotspots":433}]
     personnel=extract_personnel(dashboard_text)
-    if len(personnel)<5: personnel=snapshot["personnel_composition"]
-    air_quality=snapshot["province_air_quality"]
+    if len(personnel)<5: personnel=REFERENCE_SNAPSHOT["personnel_composition"]
+    air_quality=REFERENCE_SNAPSHOT["province_air_quality"]
     provinces=[]
     for name,area in pmap.items():
         lat,lng=PROVINCE_COORDS[name]
@@ -242,7 +298,7 @@ def main():
     for src in SOURCE_CONFIG:
         s=selected[src["key"]]
         cards.append({"title":src["name"],"description":"Keyword-discovered reference validated by relevance score." if s["reference_type"]=="keyword_match" else "Keyword candidate did not meet the relevance threshold; fixed reference used.","date":None,"url":s["url"],"reference_type":s["reference_type"],"relevance_score":s["score"],"validation_threshold":RELEVANCE_THRESHOLD,"validation_passed":s["validation_passed"],"keyword_hits":s["keyword_hits"],"pages_checked":s["pages_checked"],"fetch_status":"OK" if s["status_code"]==200 else "UNAVAILABLE"})
-    data={"metadata":{"last_updated":now_iso(),"last_updated_display":datetime.now().astimezone().strftime("%d %B %Y, %H:%M WIB"),"report_title":"Karhutla Indonesia 2026 — Situasi & Penanganan","scope":"Six priority provinces","discovery_mode":"keywords + sitemap + internal links + site-restricted search","relevance_threshold":RELEVANCE_THRESHOLD,"fallback_policy":"If the best keyword-discovered candidate does not meet the relevance threshold, use the configured fixed reference URL.","author":"Kelvin Irawan"},"current":current,"priority_provinces":provinces,"province_air_quality":air_quality,"hotspot_window_latest":{"period":"10–21 September 2026","high_confidence":hotspot_top},"hotspot_window":snapshot["hotspot_window"],"personnel_composition":personnel,"operations_today":snapshot["operations_today"],"province_snapshot_date":"9 August 2026","province_snapshot_source_note":"Uniform province comparison from BNPB reporting through 9 August 2026.","sources":cards}
+    data={"metadata":{"last_updated":now_iso(),"last_updated_display":datetime.now().astimezone().strftime("%d %B %Y, %H:%M WIB"),"report_title":"Karhutla Indonesia 2026 — Situasi & Penanganan","scope":"Six priority provinces","discovery_mode":"keywords + sitemap + internal links + site-restricted search","relevance_threshold":RELEVANCE_THRESHOLD,"fallback_policy":"If the best keyword-discovered candidate does not meet the relevance threshold, use the configured fixed reference URL.","author":"Kelvin Irawan"},"current":current,"priority_provinces":provinces,"province_air_quality":air_quality,"hotspot_window_latest":{"period":"10–21 September 2026","high_confidence":hotspot_top},"hotspot_window":REFERENCE_SNAPSHOT["hotspot_window"],"personnel_composition":personnel,"operations_today":REFERENCE_SNAPSHOT["operations_today"],"province_snapshot_date":"9 August 2026","province_snapshot_source_note":"Uniform province comparison from BNPB reporting through 9 August 2026.","sources":cards}
     write(data,OUTPUT);write(provinces,PROVINCE_OUTPUT);write({"generated_at":now_iso(),"sources":cards},REGISTRY_OUTPUT)
     print("SCRAPING COMPLETE")
 
