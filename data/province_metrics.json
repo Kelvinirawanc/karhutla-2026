@@ -1,11 +1,35 @@
 [
   {
+    "name": "Kalimantan Barat",
+    "key": "kalimantan_barat",
+    "coverage": "Priority response",
+    "lat": -0.1,
+    "lng": 110.0,
+    "burned_area_snapshot_ha": 28680.47
+  },
+  {
     "name": "Riau",
     "key": "riau",
     "coverage": "Priority response",
     "lat": 0.3,
     "lng": 101.7,
     "burned_area_snapshot_ha": 15551.76
+  },
+  {
+    "name": "Kalimantan Tengah",
+    "key": "kalimantan_tengah",
+    "coverage": "Priority response",
+    "lat": -1.7,
+    "lng": 113.4,
+    "burned_area_snapshot_ha": 3069.52
+  },
+  {
+    "name": "Sumatera Selatan",
+    "key": "sumatera_selatan",
+    "coverage": "Priority response",
+    "lat": -3.2,
+    "lng": 104.2,
+    "burned_area_snapshot_ha": 664.87
   },
   {
     "name": "Jambi",
@@ -16,32 +40,8 @@
     "burned_area_snapshot_ha": 540.0
   },
   {
-    "name": "Sumatera Selatan",
-    "key": "sumsel",
-    "coverage": "Priority response",
-    "lat": -3.2,
-    "lng": 104.2,
-    "burned_area_snapshot_ha": 664.87
-  },
-  {
-    "name": "Kalimantan Barat",
-    "key": "kalbar",
-    "coverage": "Priority response",
-    "lat": -0.1,
-    "lng": 110.0,
-    "burned_area_snapshot_ha": 28680.47
-  },
-  {
-    "name": "Kalimantan Tengah",
-    "key": "kalteng",
-    "coverage": "Priority response",
-    "lat": -1.7,
-    "lng": 113.4,
-    "burned_area_snapshot_ha": 3069.52
-  },
-  {
     "name": "Kalimantan Selatan",
-    "key": "kalsel",
+    "key": "kalimantan_selatan",
     "coverage": "Priority response",
     "lat": -3.0,
     "lng": 115.4,
