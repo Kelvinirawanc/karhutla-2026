@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "last_updated": "2026-09-29",
+    "last_updated_display": "29 September 2026",
+    "report_title": "Karhutla Indonesia 2026 — Situasi & Penanganan",
+    "data_scope": "Six priority provinces",
+    "data_status": "reference_snapshot",
+    "note": "Initial dashboard snapshot based on official BNPB and BMKG publications. Re-run scraper to refresh."
+  },
+  "current": {
+    "total_hotspots": 2310,
+    "fire_spots": 202,
+    "burned_area_24h_ha": 638.6,
+    "handled_area_today_ha": 431.5,
+    "personnel": 59035,
+    "air_units": 57,
+    "affected_regencies_cities": 36,
+    "handled_area_ground_ha": 369.0,
+    "handled_area_air_ha": 62.5,
+    "uncontrolled_area_ha": 96.07,
+    "total_burned_area_situation_ha": 527.6
+  },
+  "priority_provinces": [
+    {
+      "name": "Riau",
+      "key": "riau",
+      "coverage": "Priority response",
+      "lat": 0.3,
+      "lng": 101.7,
+      "burned_area_snapshot_ha": 15551.76
+    },
+    {
+      "name": "Jambi",
+      "key": "jambi",
+      "coverage": "Priority response",
+      "lat": -1.6,
+      "lng": 103.6,
+      "burned_area_snapshot_ha": 540.0
+    },
+    {
+      "name": "Sumatera Selatan",
+      "key": "sumsel",
+      "coverage": "Priority response",
+      "lat": -3.2,
+      "lng": 104.2,
+      "burned_area_snapshot_ha": 664.87
+    },
+    {
+      "name": "Kalimantan Barat",
+      "key": "kalbar",
+      "coverage": "Priority response",
+      "lat": -0.1,
+      "lng": 110.0,
+      "burned_area_snapshot_ha": 28680.47
+    },
+    {
+      "name": "Kalimantan Tengah",
+      "key": "kalteng",
+      "coverage": "Priority response",
+      "lat": -1.7,
+      "lng": 113.4,
+      "burned_area_snapshot_ha": 3069.52
+    },
+    {
+      "name": "Kalimantan Selatan",
+      "key": "kalsel",
+      "coverage": "Priority response",
+      "lat": -3.0,
+      "lng": 115.4,
+      "burned_area_snapshot_ha": 383.07
+    }
+  ],
+  "province_air_quality": [
+    {
+      "province": "Riau",
+      "air_quality": "Moderate–Unhealthy",
+      "visibility_km": "4 km"
+    },
+    {
+      "province": "Jambi",
+      "air_quality": "Good–Unhealthy",
+      "visibility_km": "2.5 km"
+    },
+    {
+      "province": "Sumatera Selatan",
+      "air_quality": "Good–Moderate",
+      "visibility_km": "≤ 6–8 km"
+    },
+    {
+      "province": "Kalimantan Barat",
+      "air_quality": "Moderate–Unhealthy",
+      "visibility_km": "0.6–10 km"
+    },
+    {
+      "province": "Kalimantan Tengah",
+      "air_quality": "Good–Hazardous",
+      "visibility_km": "2.5 km"
+    },
+    {
+      "province": "Kalimantan Selatan",
+      "air_quality": "Unhealthy–Hazardous",
+      "visibility_km": "< 7 km"
+    }
+  ],
+  "hotspot_window": {
+    "period": "7–16 September 2026",
+    "high_confidence": [
+      {
+        "province": "Kalimantan Tengah",
+        "hotspots": 3177
+      },
+      {
+        "province": "Sumatera Selatan",
+        "hotspots": 1305
+      },
+      {
+        "province": "Kalimantan Barat",
+        "hotspots": 1088
+      },
+      {
+        "province": "Papua Selatan",
+        "hotspots": 960
+      }
+    ]
+  },
+  "hotspot_window_latest": {
+    "period": "10–21 September 2026",
+    "high_confidence": [
+      {
+        "province": "Kalimantan Tengah",
+        "hotspots": 5283
+      },
+      {
+        "province": "Sumatera Selatan",
+        "hotspots": 1485
+      },
+      {
+        "province": "Kalimantan Barat",
+        "hotspots": 1357
+      },
+      {
+        "province": "Kalimantan Selatan",
+        "hotspots": 498
+      },
+      {
+        "province": "Kalimantan Timur",
+        "hotspots": 433
+      }
+    ]
+  },
+  "personnel_composition": [
+    {
+      "group": "TNI",
+      "count": 14311
+    },
+    {
+      "group": "Relawan",
+      "count": 11919
+    },
+    {
+      "group": "Polri",
+      "count": 8153
+    },
+    {
+      "group": "Perusahaan",
+      "count": 8069
+    },
+    {
+      "group": "MPA",
+      "count": 5743
+    },
+    {
+      "group": "BPBD",
+      "count": 3527
+    },
+    {
+      "group": "Pemda",
+      "count": 2680
+    },
+    {
+      "group": "Satpol PP",
+      "count": 1891
+    },
+    {
+      "group": "Manggala Agni",
+      "count": 1451
+    },
+    {
+      "group": "Polisi Hutan",
+      "count": 1271
+    },
+    {
+      "group": "Pemerintah Pusat",
+      "count": 20
+    }
+  ],
+  "operations_today": [
+    {
+      "operation": "Patroli",
+      "sorties": 9
+    },
+    {
+      "operation": "Water Bombing",
+      "sorties": 21
+    },
+    {
+      "operation": "OMC",
+      "sorties": 8
+    }
+  ],
+  "province_snapshot_date": "9 August 2026",
+  "province_snapshot_source_note": "Uniform province comparison from BNPB's 10 August 2026 report, using cumulative burned-area figures through 9 August 2026.",
+  "sources": [
+    {
+      "title": "BNPB — Dashboard Karhutla 2026",
+      "description": "Current six-province operational snapshot: hotspots, fire spots, burned area, handled area, personnel, air units and air-quality context.",
+      "date": "29 September 2026",
+      "url": "https://gis.bnpb.go.id/karhutla2026/",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BNPB — Situasi Terkini Penanganan Karhutla di 6 Provinsi Prioritas",
+      "description": "Latest six-province situation update, including 527.6 ha burned on 28 Sep and 96.07 ha remaining unextinguished.",
+      "date": "29 September 2026",
+      "url": "https://bnpb.go.id/index.php/berita/perkembangan-situasi-terkini-penanganan-karhutla-di-6-provinsi-prioritas",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BNPB — Six-Province Karhutla Priority Update",
+      "description": "Uniform province comparison of cumulative burned area through 9 Aug 2026.",
+      "date": "10 August 2026",
+      "url": "https://www.bnpb.go.id/berita/kepala-bnpb-hadiri-rakor-penanganan-karhutla-pemerintah-perkuat-operasi-darat-hadapi-puncak-risiko-agustusseptember",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BMKG — Karhutla & Hotspot Monitoring",
+      "description": "Dry-season conditions, El Niño and high-confidence hotspot monitoring.",
+      "date": "22 September 2026",
+      "url": "https://www.bmkg.go.id/cuaca/potensi-hujan-sepekan/prakiraan-cuaca-indonesia-sepekan-periode-22-28-september-2026-sebaran-asap-dan-karhutla-masih-menjadi-perhatian-hujan-lebat-masih-terjadi-di-sejumlah-wilayah",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BMKG — El Niño & Karhutla Risk",
+      "description": "September remains a critical karhutla period with dry conditions and high hotspot activity.",
+      "date": "7 September 2026",
+      "url": "https://www.bmkg.go.id/berita/dampak-el-nino-masih-perlu-diwaspadai-bmkg-perkuat-dukungan-pengendalian-karhutla",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BNPB — Sumatera Selatan Karhutla Response",
+      "description": "Province-specific field response, personnel and aerial-support context.",
+      "date": "1 September 2026",
+      "url": "https://bnpb.go.id/berita/bnpb-optimalkan-satgas-darat-dan-operasi-udara-percepat-penanganan-karhutla-di-bumi-sriwijaya",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BNPB — Kalimantan Tengah Karhutla Evaluation",
+      "description": "Kalimantan Tengah response, hotspot and burned-area context, plus air-quality and visibility constraints.",
+      "date": "21 September 2026",
+      "url": "https://bnpb.go.id/index.php/berita/evaluasi-penanganan-karhutla-kalimantan-tengah-bnpb-perkuat-pemadaman-darat",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    },
+    {
+      "title": "BMKG — OMC Kalimantan Barat",
+      "description": "Weather-support and cloud-seeding operations to reduce karhutla risk and fire activity in West Kalimantan.",
+      "date": "5 September 2026",
+      "url": "https://www.bmkg.go.id/berita/utama/optimalkan-potensi-hujan-untuk-redakan-karhutla-bmkg-omc-di-kalbar-buahkan-hasil",
+      "reference_type": "fixed_reference",
+      "fetch_status": "REFERENCE_SNAPSHOT"
+    }
+  ]
+}

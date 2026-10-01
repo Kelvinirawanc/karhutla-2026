@@ -1,0 +1,125 @@
+[
+  {
+    "key": "bnpb_dashboard",
+    "name": "BNPB — Dashboard Karhutla 2026",
+    "domains": [
+      "gis.bnpb.go.id"
+    ],
+    "keywords": [
+      "karhutla",
+      "hotspot",
+      "fire spot",
+      "luas terbakar",
+      "luas ditangani",
+      "personel gabungan",
+      "29 september 2026",
+      "6 provinsi"
+    ],
+    "fallback_url": "https://gis.bnpb.go.id/karhutla2026/"
+  },
+  {
+    "key": "bnpb_latest",
+    "name": "BNPB — Situasi Terkini 6 Provinsi Prioritas",
+    "domains": [
+      "bnpb.go.id",
+      "www.bnpb.go.id"
+    ],
+    "keywords": [
+      "karhutla",
+      "6 provinsi prioritas",
+      "527,6",
+      "96,07",
+      "431,53",
+      "59.035",
+      "29 september 2026"
+    ],
+    "fallback_url": "https://bnpb.go.id/index.php/berita/perkembangan-situasi-terkini-penanganan-karhutla-di-6-provinsi-prioritas"
+  },
+  {
+    "key": "bnpb_province_snapshot",
+    "name": "BNPB — Cumulative Province Snapshot",
+    "domains": [
+      "bnpb.go.id",
+      "www.bnpb.go.id"
+    ],
+    "keywords": [
+      "karhutla",
+      "48.889,69",
+      "28.680,47",
+      "15.551,76",
+      "3.069,52",
+      "664,87",
+      "540",
+      "383,07",
+      "9 agustus 2026"
+    ],
+    "fallback_url": "https://www.bnpb.go.id/berita/kepala-bnpb-hadiri-rakor-penanganan-karhutla-pemerintah-perkuat-operasi-darat-hadapi-puncak-risiko-agustusseptember"
+  },
+  {
+    "key": "bmkg_latest",
+    "name": "BMKG — Karhutla & Hotspot Monitoring",
+    "domains": [
+      "bmkg.go.id",
+      "www.bmkg.go.id"
+    ],
+    "keywords": [
+      "karhutla",
+      "hotspot",
+      "kebakaran hutan dan lahan",
+      "kalimantan tengah",
+      "sumatera selatan",
+      "kalimantan barat",
+      "22 september 2026"
+    ],
+    "fallback_url": "https://www.bmkg.go.id/cuaca/potensi-hujan-sepekan/prakiraan-cuaca-indonesia-sepekan-periode-22-28-september-2026-sebaran-asap-dan-karhutla-masih-menjadi-perhatian-hujan-lebat-masih-terjadi-di-sejumlah-wilayah"
+  },
+  {
+    "key": "bmkg_el_nino",
+    "name": "BMKG — El Niño & Karhutla Risk",
+    "domains": [
+      "bmkg.go.id",
+      "www.bmkg.go.id"
+    ],
+    "keywords": [
+      "el niño",
+      "karhutla",
+      "fase kritis",
+      "hotspot",
+      "september 2026"
+    ],
+    "fallback_url": "https://www.bmkg.go.id/berita/dampak-el-nino-masih-perlu-diwaspadai-bmkg-perkuat-dukungan-pengendalian-karhutla"
+  },
+  {
+    "key": "bnpb_kalteng",
+    "name": "BNPB — Kalimantan Tengah Evaluation",
+    "domains": [
+      "bnpb.go.id",
+      "www.bnpb.go.id"
+    ],
+    "keywords": [
+      "kalimantan tengah",
+      "karhutla",
+      "142.000 hotspot",
+      "3.800 kejadian",
+      "7.634 hektare",
+      "21 september 2026"
+    ],
+    "fallback_url": "https://bnpb.go.id/index.php/berita/evaluasi-penanganan-karhutla-kalimantan-tengah-bnpb-perkuat-pemadaman-darat"
+  },
+  {
+    "key": "bmkg_omc_kalbar",
+    "name": "BMKG — OMC Kalimantan Barat",
+    "domains": [
+      "bmkg.go.id",
+      "www.bmkg.go.id"
+    ],
+    "keywords": [
+      "kalimantan barat",
+      "karhutla",
+      "omc",
+      "operasi modifikasi cuaca",
+      "5 september 2026"
+    ],
+    "fallback_url": "https://www.bmkg.go.id/berita/utama/optimalkan-potensi-hujan-untuk-redakan-karhutla-bmkg-omc-di-kalbar-buahkan-hasil"
+  }
+]

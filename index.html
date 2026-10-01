@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Karhutla Indonesia 2026 — Situation &amp; Response</title>
+<meta name="description" content="Interactive dashboard for forest and land fires in Indonesia, focusing on six priority provinces.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="css/style.css">
+</head>
+<body><div class="page-container">
+<header class="dashboard-header"><div class="header-content">
+<div class="header-text"><div class="eyebrow" data-i18n="eyebrow">FOREST &amp; LAND FIRE IMPACT ANALYTICS</div>
+<div class="title-row"><div class="title-fire-icon"><svg viewBox="0 0 64 64"><path d="M33 6c6 10 14 14 14 27 0 13-9 23-23 23C12 56 8 48 8 39c0-10 6-18 16-24-1 8 2 12 7 15 3-7 2-14 2-24Z"/><path d="M34 30c4 5 7 9 7 14 0 6-4 10-9 10-7 0-10-5-10-10 0-5 4-9 8-12 0 4 1 6 4 8 1-3 1-6 0-10Z" fill="#fff"/></svg></div><h1 data-i18n="title">Karhutla Indonesia 2026</h1></div>
+<p class="header-description" data-i18n="headerDescription">Situation, fire coverage, hotspot activity, air quality, and response operations across Indonesia's priority provinces.</p></div>
+<div class="header-actions"><div class="language-switch"><button class="lang-button active" data-lang="en">EN</button><button class="lang-button" data-lang="id">ID</button></div>
+<div class="header-status"><span class="status-label" data-i18n="statusLabel">REPORT STATUS</span><div class="status-badge" data-i18n="statusBadge">Monitoring 6 Priority Provinces</div><span class="status-date-label" data-i18n="updatedAsOf">UPDATED DATA AS OF</span><span id="statusDate" class="status-date">—</span></div></div>
+</div></header>
+
+<main>
+<section class="kpi-grid">
+<div class="kpi-card accent"><div class="kpi-label" data-i18n="hotspots">Total Hotspots</div><div id="kpiHotspots" class="kpi-value">—</div><div class="kpi-description" data-i18n="sixProvinceAccum">Accumulated across 6 priority provinces</div></div>
+<div class="kpi-card"><div class="kpi-label" data-i18n="fireSpots">Fire Spots</div><div id="kpiFireSpots" class="kpi-value">—</div><div class="kpi-description" data-i18n="verifiedOperational">Operational fire spots</div></div>
+<div class="kpi-card"><div class="kpi-label" data-i18n="burned24h">Burned Area — 24h</div><div id="kpiBurned24h" class="kpi-value">—</div><div class="kpi-description">ha</div></div>
+<div class="kpi-card"><div class="kpi-label" data-i18n="handledToday">Area Handled — Today</div><div id="kpiHandledToday" class="kpi-value">—</div><div class="kpi-description">ha</div></div>
+<div class="kpi-card"><div class="kpi-label" data-i18n="personnel">Combined Personnel</div><div id="kpiPersonnel" class="kpi-value">—</div><div class="kpi-description" data-i18n="responsePersonnel">Response personnel</div></div>
+<div class="kpi-card"><div class="kpi-label" data-i18n="affectedKab">Affected Kab/Kota</div><div id="kpiAffectedKab" class="kpi-value">—</div><div class="kpi-description" data-i18n="reportedCoverage">Reported affected districts/cities</div></div>
+</section>
+
+<section class="two-column-grid">
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="situationOverview">Situation Overview</h2><p data-i18n="latestOperational">Latest operational snapshot for the six priority provinces</p></div></div>
+<div class="overview-content"><div class="overview-row"><span data-i18n="priorityScope">Priority scope</span><strong>Riau • Jambi • Sumatera Selatan • Kalbar • Kalteng • Kalsel</strong></div>
+<div class="overview-row"><span data-i18n="total24h">Burned area, last 24h</span><strong id="overviewBurned">—</strong></div>
+<div class="overview-row"><span data-i18n="handledGround">Handled — ground</span><strong id="overviewGround">—</strong></div>
+<div class="overview-row"><span data-i18n="handledAir">Handled — air</span><strong id="overviewAir">—</strong></div>
+<div class="overview-row"><span data-i18n="remainingUncontrolled">Unextinguished area, 28 Sep</span><strong id="overviewRemaining">—</strong></div>
+<div class="overview-row"><span data-i18n="airUnits">Air units</span><strong id="overviewAirUnits">—</strong></div></div></div>
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="impactSummary">Impact &amp; Response Summary</h2><p data-i18n="mainResponseAreas">Key recorded impacts and response capacity</p></div></div>
+<div class="summary-grid"><div class="summary-card"><span class="summary-icon">🔥</span><div><strong data-i18n="hotspotActivity">Hotspot activity</strong><p id="summaryHotspotText">—</p></div></div>
+<div class="summary-card"><span class="summary-icon">🌳</span><div><strong data-i18n="provinceCoverage">Priority province coverage</strong><p data-i18n="sixPriorityText">Six provinces under priority response.</p></div></div>
+<div class="summary-card"><span class="summary-icon">👥</span><div><strong data-i18n="fieldResponse">Field response</strong><p id="summaryPersonnelText">—</p></div></div>
+<div class="summary-card"><span class="summary-icon">✈</span><div><strong data-i18n="airOperations">Air operations</strong><p id="summaryAirText">—</p></div></div>
+<div class="summary-card"><span class="summary-icon">💨</span><div><strong data-i18n="airQuality">Air quality</strong><p data-i18n="airQualityText">Qualitative air-quality conditions and visibility varied across the six provinces.</p></div></div>
+<div class="summary-card"><span class="summary-icon">🌦</span><div><strong data-i18n="weatherContext">Weather context</strong><p data-i18n="weatherContextText">BMKG linked dry conditions and very strong El Niño influence with elevated karhutla risk.</p></div></div>
+</div></div></section>
+
+<section class="two-column-grid">
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="provinceCoverageMap">Province Coverage</h2><p data-i18n="provinceCoverageSubtitle">Priority provinces highlighted on the Indonesia administrative map</p></div></div>
+<div id="provinceMap" class="map-container"></div><div class="map-note" data-i18n="mapNote">The highlighted six provinces are the national priority response area. Fill intensity uses a uniform cumulative burned-area snapshot through 9 August 2026, not today's fire area.</div></div>
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="provinceAreaChart">Burned Area by Priority Province</h2><p data-i18n="provinceAreaSubtitle">Uniform comparison snapshot through 9 August 2026</p></div></div>
+<div class="chart-container tall"><canvas id="provinceAreaChart"></canvas></div></div>
+</section>
+
+<section class="two-column-grid">
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="hotspotChart">High-Confidence Hotspots</h2><p id="hotspotPeriod">—</p></div></div><div class="chart-container"><canvas id="hotspotChart"></canvas></div></div>
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="responseOps">Response Operations</h2><p data-i18n="sortiesToday">Reported sorties today</p></div></div><div class="chart-container"><canvas id="operationsChart"></canvas></div></div>
+</section>
+
+<section class="two-column-grid">
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="personnelComposition">Combined Personnel Composition</h2><p data-i18n="allInstitutions">Across participating response groups</p></div></div><div class="chart-container tall"><canvas id="personnelChart"></canvas></div></div>
+<div class="panel"><div class="panel-header"><div><h2 data-i18n="airQualityPanel">Air Quality &amp; Visibility</h2><p data-i18n="qualitativePanel">Qualitative conditions reported across the priority provinces</p></div></div><div id="airQualityGrid" class="air-quality-grid"></div></div>
+</section>
+
+<section class="panel"><div class="panel-header"><div><h2 data-i18n="latestSituation">Latest Situation</h2><p data-i18n="latestSituationSubtitle">28–29 September 2026 operational update</p></div></div>
+<div class="metric-strip"><div><span data-i18n="reportedBurned">Reported burned area</span><strong id="latestTotalBurned">—</strong></div><div><span data-i18n="handledArea">Handled</span><strong id="latestHandled">—</strong></div><div><span data-i18n="unextinguished">Still unextinguished</span><strong id="latestUnextinguished">—</strong></div><div><span data-i18n="comparison">Change vs 27 Sep</span><strong id="latestChange">—</strong></div></div>
+<div class="note-box" data-i18n="scopeNote">Daily and cumulative metrics in this report come from different official snapshots. Dates and metric scope are shown so values are not interpreted as if they were from one identical time window.</div></section>
+
+<section class="panel"><div class="panel-header"><div><h2 data-i18n="timeline">Karhutla Response Timeline</h2><p data-i18n="milestones">Key monitoring and response milestones</p></div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">10 August 2026</div><div class="timeline-content"><h4 data-i18n="timeline1Title">National priority response reinforced</h4><p data-i18n="timeline1Desc">BNPB highlighted six priority provinces as the government prepared for elevated August–September karhutla risk.</p></div></div>
+<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">7 September 2026</div><div class="timeline-content"><h4 data-i18n="timeline2Title">BMKG flagged critical conditions</h4><p data-i18n="timeline2Desc">Dry conditions, very strong El Niño influence and high hotspot activity remained important risk factors.</p></div></div>
+<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">16–21 September 2026</div><div class="timeline-content"><h4 data-i18n="timeline3Title">Hotspot concentration &amp; air-quality concerns</h4><p data-i18n="timeline3Desc">BMKG and BNPB reported high hotspot concentrations in Kalimantan and Sumatera, alongside smoke and visibility impacts.</p></div></div>
+<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">28–29 September 2026</div><div class="timeline-content"><h4 data-i18n="timeline4Title">Latest six-province operational update</h4><p data-i18n="timeline4Desc">BNPB reported 527.6 ha burned in the latest situation snapshot, 431.53 ha handled and 96.07 ha still unextinguished.</p></div></div>
+</div></section>
+
+<section class="panel sources-panel"><div class="panel-header"><div><h2 data-i18n="sources">Data Sources</h2><p data-i18n="sourcesSubtitle">Official references used by the dashboard and scraper</p></div></div><div id="sourceList" class="source-list"></div></section>
+</main>
+
+<footer><div class="footer-title">Karhutla Indonesia 2026 — Situation &amp; Response Dashboard</div><div>Data analysis &amp; dashboard by <strong>Kelvin Irawan</strong></div><div>Built with HTML, CSS, JavaScript, Chart.js, Leaflet and Python</div><div>Data compiled from publicly available official sources. Province-area comparison is date-scoped to 9 August 2026; operational snapshot metrics are date-scoped to 28–29 September 2026.</div></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="js/dashboard.js"></script>
+</body></html>
