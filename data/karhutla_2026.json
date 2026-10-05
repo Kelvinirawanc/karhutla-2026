@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-10-04T04:43:41.462730+00:00",
-    "last_updated_display": "04 October 2026, 04:43 WIB",
+    "last_updated": "2026-10-05T04:29:44.341156+00:00",
+    "last_updated_display": "05 October 2026, 04:29 WIB",
     "report_title": "Karhutla Indonesia 2026 — Situasi & Penanganan",
     "scope": "Six priority provinces",
     "discovery_mode": "keywords + sitemap + internal links + site-restricted search",
@@ -14,7 +14,7 @@
     "fire_spots": 202,
     "burned_area_24h_ha": 638.6,
     "handled_area_today_ha": 431.5,
-    "personnel": 2.5,
+    "personnel": 59035,
     "air_units": 57,
     "affected_regencies_cities": 36,
     "handled_area_ground_ha": 369.03,
@@ -24,14 +24,6 @@
   },
   "priority_provinces": [
     {
-      "name": "Kalimantan Barat",
-      "key": "kalimantan_barat",
-      "coverage": "Priority response",
-      "lat": -0.1,
-      "lng": 110.0,
-      "burned_area_snapshot_ha": 28680.47
-    },
-    {
       "name": "Riau",
       "key": "riau",
       "coverage": "Priority response",
@@ -40,12 +32,12 @@
       "burned_area_snapshot_ha": 15551.76
     },
     {
-      "name": "Kalimantan Tengah",
-      "key": "kalimantan_tengah",
+      "name": "Jambi",
+      "key": "jambi",
       "coverage": "Priority response",
-      "lat": -1.7,
-      "lng": 113.4,
-      "burned_area_snapshot_ha": 3069.52
+      "lat": -1.6,
+      "lng": 103.6,
+      "burned_area_snapshot_ha": 540.0
     },
     {
       "name": "Sumatera Selatan",
@@ -56,12 +48,20 @@
       "burned_area_snapshot_ha": 664.87
     },
     {
-      "name": "Jambi",
-      "key": "jambi",
+      "name": "Kalimantan Barat",
+      "key": "kalimantan_barat",
       "coverage": "Priority response",
-      "lat": -1.6,
-      "lng": 103.6,
-      "burned_area_snapshot_ha": 540.0
+      "lat": -0.1,
+      "lng": 110.0,
+      "burned_area_snapshot_ha": 28680.47
+    },
+    {
+      "name": "Kalimantan Tengah",
+      "key": "kalimantan_tengah",
+      "coverage": "Priority response",
+      "lat": -1.7,
+      "lng": 113.4,
+      "burned_area_snapshot_ha": 3069.52
     },
     {
       "name": "Kalimantan Selatan",
@@ -219,16 +219,14 @@
       "date": null,
       "url": "https://gis.bnpb.go.id/karhutla2026/",
       "reference_type": "fixed_reference",
-      "relevance_score": 20,
+      "relevance_score": 16,
       "validation_threshold": 18,
       "validation_passed": false,
       "keyword_hits": [
-        "karhutla",
-        "hotspot",
-        "personel gabungan"
+        "karhutla"
       ],
       "pages_checked": 0,
-      "fetch_status": "OK"
+      "fetch_status": "UNAVAILABLE"
     },
     {
       "title": "BNPB — Situasi Terkini 6 Provinsi Prioritas",
@@ -243,7 +241,7 @@
         "karhutla",
         "6 provinsi prioritas"
       ],
-      "pages_checked": 36,
+      "pages_checked": 0,
       "fetch_status": "UNAVAILABLE"
     },
     {
@@ -252,22 +250,14 @@
       "date": null,
       "url": "https://www.bnpb.go.id/berita/kepala-bnpb-hadiri-rakor-penanganan-karhutla-pemerintah-perkuat-operasi-darat-hadapi-puncak-risiko-agustusseptember",
       "reference_type": "fixed_reference",
-      "relevance_score": 32,
+      "relevance_score": 10,
       "validation_threshold": 18,
       "validation_passed": false,
       "keyword_hits": [
-        "karhutla",
-        "48.889,69",
-        "28.680,47",
-        "15.551,76",
-        "3.069,52",
-        "664,87",
-        "540",
-        "383,07",
-        "9 agustus 2026"
+        "karhutla"
       ],
-      "pages_checked": 36,
-      "fetch_status": "OK"
+      "pages_checked": 0,
+      "fetch_status": "UNAVAILABLE"
     },
     {
       "title": "BMKG — Karhutla & Hotspot Monitoring",
