@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T04:46:01.295731+00:00",
+  "generated_at": "2026-10-08T04:55:43.338915+00:00",
   "sources": [
     {
       "title": "BNPB — Dashboard Karhutla 2026",
@@ -71,7 +71,7 @@
         "hotspot",
         "kebakaran hutan dan lahan"
       ],
-      "pages_checked": 35,
+      "pages_checked": 31,
       "fetch_status": "OK"
     },
     {
@@ -88,7 +88,7 @@
         "karhutla",
         "hotspot"
       ],
-      "pages_checked": 35,
+      "pages_checked": 31,
       "fetch_status": "OK"
     },
     {
@@ -122,7 +122,7 @@
         "omc",
         "operasi modifikasi cuaca"
       ],
-      "pages_checked": 35,
+      "pages_checked": 31,
       "fetch_status": "OK"
     }
   ]
