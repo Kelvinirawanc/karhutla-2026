@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T04:58:43.021311+00:00",
+  "generated_at": "2026-10-10T04:44:13.217581+00:00",
   "sources": [
     {
       "title": "BNPB — Dashboard Karhutla 2026",
@@ -40,14 +40,22 @@
       "date": null,
       "url": "https://www.bnpb.go.id/berita/kepala-bnpb-hadiri-rakor-penanganan-karhutla-pemerintah-perkuat-operasi-darat-hadapi-puncak-risiko-agustusseptember",
       "reference_type": "fixed_reference",
-      "relevance_score": 10,
+      "relevance_score": 32,
       "validation_threshold": 18,
       "validation_passed": false,
       "keyword_hits": [
-        "karhutla"
+        "karhutla",
+        "48.889,69",
+        "28.680,47",
+        "15.551,76",
+        "3.069,52",
+        "664,87",
+        "540",
+        "383,07",
+        "9 agustus 2026"
       ],
-      "pages_checked": 8,
-      "fetch_status": "UNAVAILABLE"
+      "pages_checked": 36,
+      "fetch_status": "OK"
     },
     {
       "title": "BMKG — Karhutla & Hotspot Monitoring",
