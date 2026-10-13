@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-10-12T04:44:51.348433+00:00",
-    "last_updated_display": "12 October 2026, 04:44 WIB",
+    "last_updated": "2026-10-13T05:50:03.921278+00:00",
+    "last_updated_display": "13 October 2026, 05:50 WIB",
     "report_title": "Karhutla Indonesia 2026 — Situasi & Penanganan",
     "scope": "Six priority provinces",
     "discovery_mode": "keywords + sitemap + internal links + site-restricted search",
@@ -14,7 +14,7 @@
     "fire_spots": 202,
     "burned_area_24h_ha": 638.6,
     "handled_area_today_ha": 431.5,
-    "personnel": 59035,
+    "personnel": 2.5,
     "air_units": 57,
     "affected_regencies_cities": 36,
     "handled_area_ground_ha": 369.03,
@@ -219,14 +219,16 @@
       "date": null,
       "url": "https://gis.bnpb.go.id/karhutla2026/",
       "reference_type": "fixed_reference",
-      "relevance_score": 16,
+      "relevance_score": 20,
       "validation_threshold": 18,
       "validation_passed": false,
       "keyword_hits": [
-        "karhutla"
+        "karhutla",
+        "hotspot",
+        "personel gabungan"
       ],
       "pages_checked": 0,
-      "fetch_status": "UNAVAILABLE"
+      "fetch_status": "OK"
     },
     {
       "title": "BNPB — Situasi Terkini 6 Provinsi Prioritas",

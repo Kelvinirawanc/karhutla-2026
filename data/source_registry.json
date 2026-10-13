@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T04:44:51.349457+00:00",
+  "generated_at": "2026-10-13T05:50:03.922234+00:00",
   "sources": [
     {
       "title": "BNPB — Dashboard Karhutla 2026",
@@ -7,14 +7,16 @@
       "date": null,
       "url": "https://gis.bnpb.go.id/karhutla2026/",
       "reference_type": "fixed_reference",
-      "relevance_score": 16,
+      "relevance_score": 20,
       "validation_threshold": 18,
       "validation_passed": false,
       "keyword_hits": [
-        "karhutla"
+        "karhutla",
+        "hotspot",
+        "personel gabungan"
       ],
       "pages_checked": 0,
-      "fetch_status": "UNAVAILABLE"
+      "fetch_status": "OK"
     },
     {
       "title": "BNPB — Situasi Terkini 6 Provinsi Prioritas",
