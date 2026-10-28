@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-10-27T04:03:21.876039+00:00",
-    "last_updated_display": "27 October 2026, 04:03 WIB",
+    "last_updated": "2026-10-28T04:26:58.003565+00:00",
+    "last_updated_display": "28 October 2026, 04:26 WIB",
     "report_title": "Karhutla Indonesia 2026 — Situasi & Penanganan",
     "scope": "Six priority provinces",
     "discovery_mode": "keywords + sitemap + internal links + site-restricted search",
@@ -283,7 +283,7 @@
         "hotspot",
         "kebakaran hutan dan lahan"
       ],
-      "pages_checked": 30,
+      "pages_checked": 35,
       "fetch_status": "OK"
     },
     {
@@ -300,7 +300,7 @@
         "karhutla",
         "hotspot"
       ],
-      "pages_checked": 30,
+      "pages_checked": 35,
       "fetch_status": "OK"
     },
     {
@@ -334,7 +334,7 @@
         "omc",
         "operasi modifikasi cuaca"
       ],
-      "pages_checked": 30,
+      "pages_checked": 35,
       "fetch_status": "OK"
     }
   ]
