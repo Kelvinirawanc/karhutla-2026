@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:05:46.531561+00:00",
+  "generated_at": "2026-11-13T05:29:35.661663+00:00",
   "sources": [
     {
       "title": "BNPB — Dashboard Karhutla 2026",
@@ -31,7 +31,7 @@
         "karhutla",
         "6 provinsi prioritas"
       ],
-      "pages_checked": 26,
+      "pages_checked": 34,
       "fetch_status": "UNAVAILABLE"
     },
     {
@@ -54,7 +54,7 @@
         "383,07",
         "9 agustus 2026"
       ],
-      "pages_checked": 29,
+      "pages_checked": 35,
       "fetch_status": "OK"
     },
     {
@@ -71,7 +71,7 @@
         "hotspot",
         "kebakaran hutan dan lahan"
       ],
-      "pages_checked": 35,
+      "pages_checked": 33,
       "fetch_status": "OK"
     },
     {
@@ -88,7 +88,7 @@
         "karhutla",
         "hotspot"
       ],
-      "pages_checked": 35,
+      "pages_checked": 33,
       "fetch_status": "OK"
     },
     {
@@ -104,7 +104,7 @@
         "kalimantan tengah",
         "karhutla"
       ],
-      "pages_checked": 30,
+      "pages_checked": 36,
       "fetch_status": "UNAVAILABLE"
     },
     {
@@ -122,7 +122,7 @@
         "omc",
         "operasi modifikasi cuaca"
       ],
-      "pages_checked": 35,
+      "pages_checked": 33,
       "fetch_status": "OK"
     }
   ]
