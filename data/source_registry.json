@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T05:09:34.191715+00:00",
+  "generated_at": "2026-11-17T06:56:16.234090+00:00",
   "sources": [
     {
       "title": "BNPB — Dashboard Karhutla 2026",
@@ -31,7 +31,7 @@
         "karhutla",
         "6 provinsi prioritas"
       ],
-      "pages_checked": 27,
+      "pages_checked": 35,
       "fetch_status": "UNAVAILABLE"
     },
     {
@@ -54,7 +54,7 @@
         "383,07",
         "9 agustus 2026"
       ],
-      "pages_checked": 28,
+      "pages_checked": 34,
       "fetch_status": "OK"
     },
     {
@@ -104,7 +104,7 @@
         "kalimantan tengah",
         "karhutla"
       ],
-      "pages_checked": 15,
+      "pages_checked": 0,
       "fetch_status": "UNAVAILABLE"
     },
     {
