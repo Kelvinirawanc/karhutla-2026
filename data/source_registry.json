@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T06:18:37.672477+00:00",
+  "generated_at": "2026-11-20T06:02:14.694416+00:00",
   "sources": [
     {
       "title": "BNPB — Dashboard Karhutla 2026",
@@ -61,14 +61,13 @@
       "title": "BMKG — Karhutla & Hotspot Monitoring",
       "description": "Keyword-discovered reference validated by relevance score.",
       "date": null,
-      "url": "https://www.bmkg.go.id/cuaca/karhutla",
+      "url": "https://bmkg.go.id/cuaca/karhutla",
       "reference_type": "keyword_match",
-      "relevance_score": 27,
+      "relevance_score": 18,
       "validation_threshold": 18,
       "validation_passed": true,
       "keyword_hits": [
         "karhutla",
-        "hotspot",
         "kebakaran hutan dan lahan"
       ],
       "pages_checked": 35,
@@ -78,15 +77,14 @@
       "title": "BMKG — El Niño & Karhutla Risk",
       "description": "Keyword-discovered reference validated by relevance score.",
       "date": null,
-      "url": "https://www.bmkg.go.id/cuaca/karhutla",
+      "url": "https://bmkg.go.id/cuaca/karhutla",
       "reference_type": "keyword_match",
-      "relevance_score": 20,
+      "relevance_score": 18,
       "validation_threshold": 18,
       "validation_passed": true,
       "keyword_hits": [
         "el niño",
-        "karhutla",
-        "hotspot"
+        "karhutla"
       ],
       "pages_checked": 35,
       "fetch_status": "OK"
@@ -111,15 +109,13 @@
       "title": "BMKG — OMC Kalimantan Barat",
       "description": "Keyword-discovered reference validated by relevance score.",
       "date": null,
-      "url": "https://www.bmkg.go.id/cuaca/modifikasi-cuaca",
+      "url": "https://bmkg.go.id/cuaca/karhutla",
       "reference_type": "keyword_match",
-      "relevance_score": 26,
+      "relevance_score": 18,
       "validation_threshold": 18,
       "validation_passed": true,
       "keyword_hits": [
-        "kalimantan barat",
         "karhutla",
-        "omc",
         "operasi modifikasi cuaca"
       ],
       "pages_checked": 35,
